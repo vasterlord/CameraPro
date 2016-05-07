@@ -264,6 +264,31 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_dev) {
             Intent intent = new Intent(this, Developer.class);
             startActivity(intent);
+            Context context = getApplicationContext();
+            Intent notificationIntent = new Intent();
+            PendingIntent contentIntent = PendingIntent.getActivity(context,
+                    0, notificationIntent,
+                    PendingIntent.FLAG_CANCEL_CURRENT);
+            NotificationManager nm = (NotificationManager) context
+                    .getSystemService(Context.NOTIFICATION_SERVICE);
+            Resources res = context.getResources();
+            Notification.Builder builder = new Notification.Builder(context);
+            Uri ringURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            long[] vibrate = new long[] { 1000, 1000, 1000, 1000 };
+            builder.setContentIntent(contentIntent)
+                    .setSmallIcon(R.drawable.cannotific)
+                    .setWhen(System.currentTimeMillis())
+                    .setSound(ringURI)
+                    .setVibrate(vibrate)
+                    .setContentTitle(" Notification ")
+                    .setContentText(" The best app ;) ");
+            Notification notification = builder.build();
+            notification.defaults = Notification.DEFAULT_SOUND |
+                    Notification.DEFAULT_VIBRATE;
+            notification.flags = notification.flags | Notification.FLAG_SHOW_LIGHTS;
+            notification.flags = notification.flags | Notification.FLAG_INSISTENT;
+            Notification n = builder.getNotification();
+            nm.notify(1, n);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
