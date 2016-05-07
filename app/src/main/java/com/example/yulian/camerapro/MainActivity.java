@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_gallery) {
             if (txtName.getText().toString().isEmpty())
             {
                 hellotxt.setText("Hello unnamed :(");
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity
             i.setType("image/*");
             startActivityForResult(i, REQUEST);
         }
-        else if (id == R.id.nav_send) {
+        else if (id == R.id.nav_dev) {
             Intent intent = new Intent(this, Developer.class);
             startActivity(intent);
         }
