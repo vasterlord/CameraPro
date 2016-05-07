@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
         Uri ringURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         long[] vibrate = new long[] { 1000, 1000, 1000, 1000 };
         builder.setContentIntent(contentIntent)
-                .setSmallIcon(R.drawable.cannotific)
+                .setSmallIcon(R.drawable.camnote)
                 .setWhen(System.currentTimeMillis())
                 .setSound(ringURI)
                 .setVibrate(vibrate)
@@ -244,7 +244,7 @@ public class MainActivity extends AppCompatActivity
             Uri ringURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             long[] vibrate = new long[] { 1000, 1000, 1000, 1000 };
             builder.setContentIntent(contentIntent)
-                    .setSmallIcon(R.drawable.cannotific)
+                    .setSmallIcon(R.drawable.camnote)
                     .setWhen(System.currentTimeMillis())
                     .setSound(ringURI)
                     .setVibrate(vibrate)
@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity
             Uri ringURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             long[] vibrate = new long[] { 1000, 1000, 1000, 1000 };
             builder.setContentIntent(contentIntent)
-                    .setSmallIcon(R.drawable.cannotific)
+                    .setSmallIcon(R.drawable.camnote)
                     .setWhen(System.currentTimeMillis())
                     .setSound(ringURI)
                     .setVibrate(vibrate)
